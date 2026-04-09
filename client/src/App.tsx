@@ -15,14 +15,17 @@ interface Message {
 
 declare global {
   interface Window {
-    SpeechRecognition: typeof SpeechRecognition;
-    webkitSpeechRecognition: typeof SpeechRecognition;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    SpeechRecognition: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    webkitSpeechRecognition: any;
   }
 }
 
 function getSpeechRecognition() {
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  return SR ? new SR() : null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return SR ? new SR() as any : null;
 }
 
 // ─── App ─────────────────────────────────────────────────────────────────────
@@ -42,7 +45,8 @@ export default function App() {
   const sessionIdRef = useRef<string | null>(null);
   const stateRef = useRef<AppState>('idle');
   const greetedRef = useRef(false);
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recognitionRef = useRef<any>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
