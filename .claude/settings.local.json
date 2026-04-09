@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(export PATH=\"$PATH:/usr/local/bin:/opt/homebrew/bin\")",
+      "Bash(npm install:*)",
+      "Bash(pkill -f \"ts-node-dev\")",
+      "Bash(pkill -f \"vite\")",
+      "Bash(open http://localhost:5173)",
+      "Bash(NODE_OPTIONS=--experimental-sqlite node -e \"require\\(''dotenv''\\).config\\(\\); console.log\\(''KEY:'', process.env.ANTHROPIC_API_KEY ? ''found \\('' + process.env.ANTHROPIC_API_KEY.substring\\(0,20\\) + ''...\\)'' : ''MISSING''\\)\")",
+      "Bash(node -e \":*)",
+      "Bash(export PATH=\"$PATH:/usr/local/bin:/opt/homebrew/bin\" curl -s -X POST http://localhost:3001/api/session)",
+      "Bash(python3 -m json.tool)",
+      "Bash(export PATH=\"$PATH:/usr/local/bin:/opt/homebrew/bin\" curl -s -X POST http://localhost:3001/api/chat -H \"Content-Type: application/json\" -d '{\"\"\"\"sessionId\"\"\"\":\"\"\"\"9779a1d5-8df9-4e57-b217-9873b6b709b1\"\"\"\",\"\"\"\"message\"\"\"\":\"\"\"\"hello\"\"\"\"}')",
+      "Bash(export PATH=\"$PATH:/usr/local/bin:/opt/homebrew/bin\" curl -s -X POST http://localhost:3001/api/chat -H \"Content-Type: application/json\" -d '{\"\"\"\"sessionId\"\"\"\":\"\"\"\"test-456\"\"\"\",\"\"\"\"message\"\"\"\":\"\"\"\"hello\"\"\"\"}')",
+      "Bash(export PATH=\"$PATH:/usr/local/bin:/opt/homebrew/bin\" curl -s -X POST http://localhost:3001/api/chat -H \"Content-Type: application/json\" -d '{\"\"\"\"sessionId\"\"\"\":\"\"\"\"test-789\"\"\"\",\"\"\"\"message\"\"\"\":\"\"\"\"hello\"\"\"\"}')",
+      "Bash(export PATH=\"$PATH:/usr/local/bin:/opt/homebrew/bin\" curl -s -X POST http://localhost:3001/api/chat -H \"Content-Type: application/json\" -d '{\"\"\"\"sessionId\"\"\"\":\"\"\"\"test-abc\"\"\"\",\"\"\"\"message\"\"\"\":\"\"\"\"hello\"\"\"\"}')",
+      "Bash(export PATH=\"$PATH:/usr/local/bin:/opt/homebrew/bin\" echo \"Waiting 60 seconds for credits to propagate...\" sleep 60 curl -s -X POST http://localhost:3001/api/chat -H \"Content-Type: application/json\" -d '{\"\"\"\"sessionId\"\"\"\":\"\"\"\"test-abc2\"\"\"\",\"\"\"\"message\"\"\"\":\"\"\"\"hello\"\"\"\"}')",
+      "Bash(export PATH=\"$PATH:/usr/local/bin:/opt/homebrew/bin\" sleep 3 curl -s -X POST http://localhost:3001/api/chat -H \"Content-Type: application/json\" -d '{\"\"\"\"sessionId\"\"\"\":\"\"\"\"test-new-key\"\"\"\",\"\"\"\"message\"\"\"\":\"\"\"\"hello\"\"\"\"}')",
+      "Bash(export PATH=\"$PATH:/usr/local/bin:/opt/homebrew/bin\" curl -s -X POST http://localhost:3001/api/chat -H \"Content-Type: application/json\" -d '{\"\"\"\"sessionId\"\"\"\":\"\"\"\"test-working\"\"\"\",\"\"\"\"message\"\"\"\":\"\"\"\"hello\"\"\"\"}')",
+      "Bash(ipconfig getifaddr:*)",
+      "Bash(export PATH=\"$PATH:/usr/local/bin:/opt/homebrew/bin\" cd \"/Users/jeremy/Claude/Food Journal\" npm install openai)",
+      "Bash(xargs kill:*)",
+      "WebFetch(domain:platform.openai.com)",
+      "WebSearch",
+      "WebFetch(domain:benjamincrozat.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:developers.openai.com)",
+      "WebFetch(domain:openai.com)",
+      "WebFetch(domain:docs.aimlapi.com)",
+      "WebFetch(domain:blog.promptlayer.com)",
+      "WebFetch(domain:openai.fm)"
+    ]
+  }
+}
