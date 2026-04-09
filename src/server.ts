@@ -86,7 +86,7 @@ app.get('/api/entries/export', async (_req: Request, res: Response, next: NextFu
 // ─── Serve React app in production ──────────────────────────────────────────
 
 if (process.env.NODE_ENV === 'production') {
-  const clientDist = path.join(__dirname, '../../client/dist');
+  const clientDist = path.join(__dirname, '../client/dist');
   app.use(express.static(clientDist));
   app.get('*', (_req: Request, res: Response) => {
     res.sendFile(path.join(clientDist, 'index.html'));
