@@ -174,7 +174,7 @@ export default function App() {
     sr.interimResults = true;
     sr.lang = 'en-US';
 
-    sr.onresult = (event: SpeechRecognitionEvent) => {
+    sr.onresult = (event: any) => {
       let interim = '';
       let final = '';
       for (let i = event.resultIndex; i < event.results.length; i++) {
@@ -189,7 +189,7 @@ export default function App() {
       }
     };
 
-    sr.onerror = (event: SpeechRecognitionErrorEvent) => {
+    sr.onerror = (event: any) => {
       if (event.error === 'not-allowed') {
         setErrorMsg('Microphone access denied. Please allow microphone and try again.');
         setShowTextFallback(true);
