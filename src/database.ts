@@ -65,23 +65,23 @@ export function getEntries(filters?: { name?: string; limit?: number }): FoodEnt
   if (filters?.name && filters?.limit) {
     return db.prepare(
       'SELECT * FROM entries WHERE LOWER(name) = LOWER(?) ORDER BY created_at DESC LIMIT ?'
-    ).all(filters.name, filters.limit) as FoodEntry[];
+    ).all(filters.name, filters.limit) as unknown as FoodEntry[];
   } else if (filters?.name) {
     return db.prepare(
       'SELECT * FROM entries WHERE LOWER(name) = LOWER(?) ORDER BY created_at DESC'
-    ).all(filters.name) as FoodEntry[];
+    ).all(filters.name) as unknown as FoodEntry[];
   } else if (filters?.limit) {
     return db.prepare(
       'SELECT * FROM entries ORDER BY created_at DESC LIMIT ?'
-    ).all(filters.limit) as FoodEntry[];
+    ).all(filters.limit) as unknown as FoodEntry[];
   }
 
-  return db.prepare('SELECT * FROM entries ORDER BY created_at DESC').all() as FoodEntry[];
+  return db.prepare('SELECT * FROM entries ORDER BY created_at DESC').all() as unknown as FoodEntry[];
 }
 
 export function getNames(): string[] {
   const db = getDb();
-  const rows = db.prepare('SELECT DISTINCT name FROM entries ORDER BY name').all() as { name: string }[];
+  const rows = db.prepare('SELECT DISTINCT name FROM entries ORDER BY name').all() as unknown as { name: string }[];
   return rows.map(r => r.name);
 }
 
